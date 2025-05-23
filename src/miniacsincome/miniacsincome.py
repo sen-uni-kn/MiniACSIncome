@@ -80,7 +80,7 @@ class MiniACSIncome(Dataset):
             snapshot_download(
                 repo_id="davidboetius/ACSIncome-2018-1-Year",
                 repo_type="dataset",
-                local_dir=self.root / "2018" / "1-Year"
+                local_dir=self.root / "2018" / "1-Year",
             )
 
         data_source = folktables.ACSDataSource(

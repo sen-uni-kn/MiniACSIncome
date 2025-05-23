@@ -37,9 +37,7 @@ def get_population_model(
             repo_type="model",
             local_dir=root,
         )
-    return torch.load(
-        root / filename, pickle_module=dill
-    )
+    return torch.load(root / filename, pickle_module=dill)
 
 
 def get_network(
