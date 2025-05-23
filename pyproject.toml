@@ -35,3 +35,9 @@ recreate = [
     "optuna>=3.5.0,<4.0",
 ]
 all = ["miniacsincome[recreate]"]
+
+[project.urls]
+Homepage = "https://github.com/sen-uni-kn/MiniACSIncome"
+Repository = "https://github.com/sen-uni-kn/MiniACSIncome.git"
+Issues = "https://github.com/sen-uni-kn/MiniACSIncome/issues"
+
