@@ -2,7 +2,7 @@
 # Licensed under the MIT license
 """MiniACSIncome: A benchmark for fairness verification of neural networks."""
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 
 from .miniacsincome import MiniACSIncome
 from .cases import get_population_model, get_network

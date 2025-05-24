@@ -14,6 +14,14 @@ from huggingface_hub import hf_hub_download
 __all__ = ["get_population_model", "get_network"]
 
 
+def _torch_load(path, **kwargs):
+    try:
+        return torch.load(path, weights_only=False, **kwargs)
+    except TypeError:
+        # missing weights_only argument in previous pytorch version
+        return torch.load(path, **kwargs)
+
+
 def get_population_model(
     num_variables: int,
     root: Union[str, os.PathLike] = ".datasets",
@@ -37,7 +45,7 @@ def get_population_model(
             repo_type="model",
             local_dir=root,
         )
-    return torch.load(root / filename, pickle_module=dill)
+    return _torch_load(root / filename, pickle_module=dill)
 
 
 def get_network(
@@ -104,4 +112,4 @@ def get_network(
             repo_type="model",
             local_dir=root,
         )
-    return torch.load(root / filename, weights_only=False)
+    return _torch_load(root / filename)

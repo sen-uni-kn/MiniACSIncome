@@ -34,7 +34,8 @@ recreate = [
     "papermill>=2.6.0,<3.0",
     "optuna>=3.5.0,<4.0",
 ]
-all = ["miniacsincome[recreate]"]
+test = ["nox==2025.5.1", "pytest==8.3.5"]
+all = ["miniacsincome[recreate,test]"]
 
 [project.urls]
 Homepage = "https://github.com/sen-uni-kn/MiniACSIncome"
